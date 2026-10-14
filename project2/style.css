@@ -1,18 +1,28 @@
 body{
    background-color: black;
-   position:absolute; 
+   /*position:absolute; */
+   display:flex;
+   justify-content: center;
+   align-items: center;
+    width: 100vw;
+   height: 100vh;
+}
+.fullbody{
+  
+   border:3px solid purple;
 }
 
-.flesh{
+.fleshtext{
    font-size: 30px;
    -webkit-text-fill-color: darkred;
 }
 
 #heart {
   position: absolute;
-  top: 230px;
-  left: 410px;
-   opacity: 0;
+   right:30%;
+  top: 25vh;
+  /*left: 60vw;*/
+  opacity: 1;
 }
 #heart:hover{
    opacity: 1;
@@ -32,9 +42,18 @@ body{
   position: absolute;
   top: 200px;
   left: 340px;
-   opacity: 0;
+   opacity: 1;
 }
 #lungs:hover{
    opacity: 1;
 }
 
+#muscles {
+  position: absolute;
+  top: 600px;
+  left: 270px;
+   opacity: 1;
+}
+#muscles:hover{
+   opacity: 1;
+}
