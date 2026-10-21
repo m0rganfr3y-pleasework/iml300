@@ -12,41 +12,6 @@ body{
    border:3px solid purple;
 }
 
-.fleshtext{
-   font-size: 30px;
-   -webkit-text-fill-color: darkred;
-}
-
-#heart {
-  position: absolute;
-   right:30%;
-  top: 25vh;
-  /*left: 60vw;*/
-  opacity: 1;
-}
-#heart:hover{
-   opacity: 1;
-}
-.hearttext{
-   position:absolute;
-   -webkit-text-fill-color: #8f4c4c;
-   font-size: 50px;
-   text-align: center;
-   top: 50px;
-   -webkit-text-stroke: 2px darkred
-   
-   
-}
-
-#lungs {
-  position: absolute;
-  top: 200px;
-  left: 340px;
-   opacity: 1;
-}
-#lungs:hover{
-   opacity: 1;
-}
 
 #muscles {
   position: absolute;
@@ -56,4 +21,33 @@ body{
 }
 #muscles:hover{
    opacity: 1;
+}
+
+
+@keyframes heartbeat {
+	0% {
+		animation-timing-function: ease-out;
+		transform: scale(1);
+		transform-origin: center center;
+	}
+
+	25% {
+		animation-timing-function: ease-in;
+		transform: scale(0.91);
+	}
+
+	39% {
+		animation-timing-function: ease-out;
+		transform: scale(0.98);
+	}
+
+	71% {
+		animation-timing-function: ease-in;
+		transform: scale(0.87);
+	}
+
+	100% {
+		animation-timing-function: ease-out;
+		transform: scale(1);
+	}
 }
