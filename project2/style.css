@@ -4,23 +4,34 @@ body{
    display:flex;
    justify-content: center;
    align-items: center;
+    /*
     width: 100vw;
    height: 100vh;
+   */
+   /*border:3px solid purple;*/
 }
+/*
 .fullbody{
   
    border:3px solid purple;
 }
+*/
 
-
-#muscles {
-  position: absolute;
-  top: 600px;
-  left: 270px;
-   opacity: 1;
+.next{
+   bottom:0 px;
+   left:0 px;
+   font-size: 20 px;
+   -webkit-text-fill-color: aliceblue;
+   position: relative;
+   text-align-last: end;
 }
-#muscles:hover{
-   opacity: 1;
+.back{
+   bottom:0 px;
+   left:0 px;
+   font-size: 20 px;
+   -webkit-text-fill-color: aliceblue;
+   position: relative;
+   border:3px solid purple;
 }
 
 
