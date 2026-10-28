@@ -2,19 +2,28 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>The Body</title>
+        <title>Me</title>
         <link rel="stylesheet" href="style.css">
         <style>
             .intro{
-                -webkit-text-fill-color: #646cf4;
+                -webkit-text-fill-color: #35f320;
                 font-size: 20px;
                 position: absolute;
                 top: 0px;
             }
-            .other{
-               -webkit-text-fill-color: #646cf4;
+            #face{
+               -webkit-text-fill-color: #35f320;
                 font-size: 20px;
-                position: relative;  
+                position: absolute;  
+                top: 100px;
+                left: 50%;
+            }
+            #scars{
+                -webkit-text-fill-color: #35f320;
+                font-size: 20px;
+                position: absolute;  
+                top: 45%;
+                left: 70%;
             }
         </style>
     </head>
@@ -22,9 +31,9 @@
     <div class = fullbody>
         <img src="assets/base.png" width = 600px >
           <p class = "intro">Oh hey! It's me!<br>Feel free to look around.</p>
-          <p class = "next">next layer</p>
-          <a href="mesub1.html"><p class = "other">1.</p></a>
-          <a href="mesub2.html"><p class = "other">2.</p></a>
+          <a href="flesh.html"><p class = "next">next layer</p></a>
+          <a href="mesub1.html"><p id = "face">1.</p></a>
+          <a href="mesub2.html"><p id = "scars">2.</p></a>
           
     </div>
     </body>
