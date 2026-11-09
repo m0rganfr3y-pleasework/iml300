@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Redaction+50:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <title>What are you worth?</title>
+  <style>
+    :root { --ink:#f1eee8; --muted:#aaa49b; --line:#4b4a46; --accent:#d5ff4f; --bg:#171716; }
+    * { box-sizing:border-box; }
+    html, body { margin:0; min-height:100%; background:var(--bg); color:var(--ink); }
+    body { font-family: "Redaction 50", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+    .story-shell { min-height:100vh; 
+      padding:28px clamp(22px,5vw,72px) 24px; 
+      display:flex; 
+      flex-direction:column;
+      position:relative; 
+      overflow:hidden; 
+      cursor:pointer; }
+    .grain { position:fixed; 
+      inset:0; pointer-events:none; 
+      opacity:.06; 
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E"); }
+    .site-header,.site-footer,.slide-topline,.comparison { display:flex; 
+      align-items:center; 
+      justify-content:space-between; }
+    .site-header { border-bottom:1px solid var(--line); 
+      padding-bottom:16px; color:var(--muted); 
+      font-size:11px; letter-spacing:.12em; 
+      text-transform:uppercase; }
+    .mark {
+      color:var(--accent); }
+    .intro,.slide { flex:1; 
+      display:flex; 
+      flex-direction:column; 
+      justify-content:center; 
+      max-width:1180px; 
+      width:100%;
+      margin:auto; }
+    .intro h1 { margin:0; 
+      font-size:clamp(4rem,12vw,10rem); 
+      line-height:.86; 
+      letter-spacing:-.085em; 
+      font-weight:700; }
+    .intro em { color:var(--accent); 
+      font-family:Georgia,serif; 
+      font-weight:400; 
+      letter-spacing:-.1em; }
+    .slide-topline { margin-bottom:28px; 
+      font-size:11px; 
+      letter-spacing:.13em; 
+      text-transform:uppercase; }
+    .kicker { color:var(--accent); margin:0; }
+    .slide-count { color:var(--muted); margin:0; }
+    .slide-count span { color:var(--line); }
+    h2 { max-width:800px;
+      margin:0 0 clamp(52px,8vh,96px);
+      font-size:clamp(2.7rem,7vw,7rem); 
+      line-height:.9; 
+      letter-spacing:-.07em; }
+    .comparison { align-items:stretch;
+      gap:clamp(22px,5vw,80px); }
+    .stat { flex:1; }
+    .stat-right { text-align:right; }
+    .stat-label { max-width:220px; 
+      min-height:38px;
+      margin:0 0 20px; 
+      color:var(--muted); 
+      font-size:13px; 
+      line-height:1.35; }
+    .stat-right .stat-label { margin-left:auto; }
+    .stat-value { margin:0;
+      color:var(--accent);
+      font-size:clamp(2.8rem,7vw,7rem); 
+      line-height:.9; 
+      letter-spacing:-.08em;
+      font-weight:700; }
+    .stat-detail { margin:18px 0 0; 
+      color:var(--muted);
+      font-size:12px; }
+    .versus { align-self:center; 
+      flex:0 0 auto; width:44px; 
+      height:44px; 
+      border:1px solid var(--line); 
+      border-radius:50%; 
+      display:grid; 
+      place-items:center;
+      color:var(--muted); 
+      font:italic 14px Georgia,serif; }
+    .slide-note { max-width:560px; 
+      margin:clamp(44px,8vh,90px) 0 0; 
+      color:var(--muted); font-size:13px;
+      line-height:1.55; }
+    .site-footer { border-top:1px solid var(--line); 
+      padding-top:18px; 
+      position:relative; }
+    .progress { display:flex; 
+      gap:6px; 
+    }
+    .progress span { width:30px; 
+      height:2px; 
+      background:var(--line); }
+    .progress span.active { background:var(--accent); }
+    .interaction-hint { position:absolute; 
+      left:50%; 
+      transform:translateX(-50%); 
+      display:flex; 
+      align-items:center;
+      gap:6px;
+      margin:0; 
+      color:var(--muted); 
+      font-size:11px; 
+      letter-spacing:.04em; }
+    .nav-buttons { 
+      display:flex; 
+      gap:6px; 
+    }
+    button { 
+      width:34px;
+      height:30px;
+      display:grid; 
+      place-items:center; 
+      border:1px solid var(--line);
+      background:transparent; 
+      color:var(--ink); 
+      cursor:pointer; }
+    button:hover,button:focus-visible { border-color:var(--accent); color:var(--accent); outline:none; }
+    @media (max-width:650px) { .story-shell { padding:22px 20px 18px; } .comparison { gap:14px; } .versus { width:34px; height:34px; font-size:12px; } .stat-label { font-size:11px; } .stat-detail { font-size:10px; } .interaction-hint { display:none; } }
+  </style>
+</head>
+<body>
+  <main class="story-shell" id="story" aria-label="What are you worth? slideshow">
+    <div class="grain" aria-hidden="true"></div>
+    <header class="site-header"><span class="mark">WORTH</span><span>A study in scale</span></header>
+    <section id="content" class="intro" aria-live="polite"><h1>What are<br><em>you</em> worth?</h1></section>
+    <footer class="site-footer">
+      <div class="progress" aria-label="Slide progress"><span></span><span></span><span></span></div>
+      <p class="interaction-hint" id="hint">⌄ &nbsp;click to enter</p>
+      <div class="nav-buttons" id="nav" hidden><button id="prev" aria-label="Previous slide">←</button><button id="next" aria-label="Next slide">→</button></div>
+    </footer>
+  </main>
+  <script>
+    const slides = [
+      { eyebrow:'01 / LABOR × COMPUTE', title:'An hour of your work.', left:['U.S. federal minimum wage','$7.25','per hour · unchanged since 2009'], right:['AI data center operations','~$25,000','per hour · illustrative large-scale estimate'], note:' '},
+      { eyebrow:'02 / CARE × DEFENSE', title:'What we choose to feed.', left:['Free lunch for every K–12 student','~$29B','per year · estimated national program cost'], right:['U.S. military spending','~$886B','per year · FY2024 outlays'], note:' '},
+      { eyebrow:'03 / HEALTH × WEALTH', title:'Who pays for life?', left:['Universal healthcare for the U.S.','~$4.5T','per year · broad national spending estimate'], right:['U.S. healthcare system spending','~$5.3T','per year · 2024 national health expenditures'], note:' '},
+      { eyebrow:'04 / THIS SLIDESHOW', title:'What is a thought?', left:['Humanity','My Idea', 'I came up with the idea for this website.'], right:['Machine','AI Code','AI coded the website.'], note:'Is it mine?'}
+    ];
+    let index = -1;
+    const content = document.getElementById('content'), hint = document.getElementById('hint'), nav = document.getElementById('nav'), bars = [...document.querySelectorAll('.progress span')];
+    const stat = (data, side) => `<article class="stat stat-${side}"><p class="stat-label">${data[0]}</p><p class="stat-value">${data[1]}</p><p class="stat-detail">${data[2]}</p></article>`;
+    function render() {
+      if (index < 0) { content.className='intro'; 
+                      content.innerHTML='<h1>What are<br><em>you</em> worth?</h1>'; 
+                      hint.innerHTML='⌄ &nbsp;click to enter'; nav.hidden=true; }
+      else { 
+        const s=slides[index]; content.className='slide'; 
+        content.innerHTML=`<div class="slide-topline"><p class="kicker">${s.eyebrow}</p><p class="slide-count">0${index+1} <span>/ 03</span></p></div><h2>${s.title}</h2><div class="comparison">${stat(s.left,'left')}<div class="versus" aria-hidden="true"><span>vs.</span></div>${stat(s.right,'right')}</div><p class="slide-note">${s.note}</p>`; 
+        hint.innerHTML='⌄ &nbsp;click for next comparison';
+        nav.hidden=false;
+      }
+      bars.forEach((bar,i)=>bar.classList.toggle('active', i <= index));
+    }
+    function next(){ index=(index+1)%slides.length; render(); }
+    function prev(){ index=index<=0?slides.length-1:index-1; render(); }
+    document.getElementById('story').addEventListener('click', e => { if (!e.target.closest('button')) next(); });
+    document.getElementById('next').onclick=e=>{e.stopPropagation();next()}; document.getElementById('prev').onclick=e=>{e.stopPropagation();prev()};
+    document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();next()} if(e.key==='ArrowLeft'){e.preventDefault();prev()}});
+  </script>
+</body>
+</html>

@@ -8,6 +8,19 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Akronim&display=swap" rel="stylesheet">
         <style>
+        @keyframes breathe {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.1);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
         .lungs{
          position:absolute;
          -webkit-text-fill-color: #5b0000;
@@ -19,13 +32,17 @@
          font-family: "Akronim", system-ui;
          font-style: normal;
          
-         -webkit-text-stroke: 1px #bb4343
+            -webkit-text-stroke: 1px #bb4343}
+            
+            .breathing{
+                 animation: breathe 3s ease 0s infinite normal forwards;
+            }
         </style>
     </head>
     <body>
     
     <div class = "fullbody">
-    <img src="assets/lungs.png" width=600 px> 
+    <img src="assets/lungs.png" width=600 px class = breathing> 
     <details class = "lungs">
      <summary>I can't breathe right </summary>
         <details>

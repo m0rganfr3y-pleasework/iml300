@@ -19,11 +19,42 @@
          font-style: normal;
          
          -webkit-text-stroke: 1px #bb4343
+            }
+        @keyframes shake {
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+
+	10%,
+	30%,
+	50%,
+	70% {
+		transform: translateX(-2px);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: translateX(2px);
+	}
+
+	80% {
+		transform: translateX(1px);
+	}
+
+	90% {
+		transform: translateX(-1px);
+	}
+}
+            #shake{
+                animation: shake 2s ease 0s infinite normal forwards;
+            }
         </style>
     </head>
     <body>
     <div class = "fullbody">
-    <img src="assets/spine.png" width=600 px> 
+    <img src="assets/spine.png" id = "shake" width=600 px > 
     <details class = "lungs">
      <summary>My spine hurts.</summary>
         <details>
