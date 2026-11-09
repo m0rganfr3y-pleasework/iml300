@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Redaction+50:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
   <title>What are you worth?</title>
   <style>
     :root { --ink:#f1eee8; --muted:#aaa49b; --line:#4b4a46; --accent:#d5ff4f; --bg:#171716; }
     * { box-sizing:border-box; }
     html, body { margin:0; min-height:100%; background:var(--bg); color:var(--ink); }
-    body { font-family: "Redaction 50", serif;
-  font-weight: 400;
+    body {  font-family: "Orbitron", sans-serif;
+  font-weight: 100;
   font-style: normal;
 }
     .story-shell { min-height:100vh; 
@@ -41,15 +41,17 @@
       justify-content:center; 
       max-width:1180px; 
       width:100%;
-      margin:auto; }
+      margin:auto;
+      font-weight: 100; 
+    }
     .intro h1 { margin:0; 
       font-size:clamp(4rem,12vw,10rem); 
       line-height:.86; 
       letter-spacing:-.085em; 
-      font-weight:700; }
+      font-weight:600; }
     .intro em { color:var(--accent); 
       font-family:Georgia,serif; 
-      font-weight:400; 
+      font-weight:200; 
       letter-spacing:-.1em; }
     .slide-topline { margin-bottom:28px; 
       font-size:11px; 
@@ -62,7 +64,9 @@
       margin:0 0 clamp(52px,8vh,96px);
       font-size:clamp(2.7rem,7vw,7rem); 
       line-height:.9; 
-      letter-spacing:-.07em; }
+      letter-spacing:-.07em; 
+      font-weight: 600;
+    }
     .comparison { align-items:stretch;
       gap:clamp(22px,5vw,80px); }
     .stat { flex:1; }
@@ -79,7 +83,7 @@
       font-size:clamp(2.8rem,7vw,7rem); 
       line-height:.9; 
       letter-spacing:-.08em;
-      font-weight:700; }
+      font-weight:400; }
     .stat-detail { margin:18px 0 0; 
       color:var(--muted);
       font-size:12px; }
