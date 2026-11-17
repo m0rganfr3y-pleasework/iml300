@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang=english>
+<head>
+<title></title>
+<style>
+    body{
+    background-image: url('assets/recordpile.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+    .albums{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         padding: 100px 0px 75px 0px;
+         position: relative
+    }
+    .left{
+        
+    }
+    .titles{
+         display: flex;
+         justify-content: center;
+         text-align: center;
+         padding-top: 20px;
+         font-size: 50px;
+    }
+    .records{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+         position: absolute;
+         top:18%;
+         z-index: -1
+     
+    }
+    .recordsmoved{
+         display: flex;
+          justify-content: center;
+          align-items: center;
+         position: absolute;
+         top:18%;
+         left:45%;
+    }
+    #record1{}
+    #album1{}
+    
+</style>
+</head>
+<body>
+<script src=“https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js”></script>
+<script type=“text/javascript” src=“project3.js”></script>
+    <p class = titles> TITLE</p>
+   <div class = albums>
+    <p>
+       <img src = "assets/blank.png" width = 400 px id = album1>
+       <img src = "assets/record.png" width = 400 px id = record1 class = records>
+       
+        
+    </p>
+    </div>
+    <div class = albums>
+    <p>
+        <img src = "assets/record.png" width = 400 px class = records id = record2>
+        <img src = "assets/blank.png" width = 400 px id = album2>
+        
+    </p>
+    </div>
+    <div class = albums>
+    <p>
+        <img src = "assets/record.png" width = 400 px class = records id = record3>
+        <img src = "assets/blank.png" width = 400 px id = album3>
+        
+    </p>
+    </div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+   $("#album1").hover(
+  function () {
+    $("#record1").addClass("recordsmoved");
+  },
+  function () {
+    $("#record1").removeClass("recordsmoved");
+  }
+);
+        $("#album2").hover(
+  function () {
+    $("#record2").addClass("recordsmoved");
+  },
+  function () {
+    $("#record2").removeClass("recordsmoved");
+  }
+);
+        $("#album3").hover(
+  function () {
+    $("#record3").addClass("recordsmoved");
+  },
+  function () {
+    $("#record3").removeClass("recordsmoved");
+  }
+);
+    </script>
+</body>
+</html>
