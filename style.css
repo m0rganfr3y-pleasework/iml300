@@ -1,5 +1,8 @@
 body{
-    background-color: aquamarine;
+    background-image: url('assets/desk.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 
 }
 
@@ -7,5 +10,6 @@ h1{
   font-family: "Fredericka the Great", serif;
   font-weight: 400;
   font-style: normal;
+  -webkit-text-fill-color: aliceblue;
     
 }
