@@ -38,3 +38,8 @@ input {
   
   /*   border: 1px solid white; */
 }
+input::placeholder{
+  font-size: 15px;
+  -webkit-text-fill-color: rgb(134, 195, 140);
+  font-family: 'Times New Roman'
+}
