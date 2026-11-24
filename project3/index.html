@@ -32,7 +32,8 @@
           align-items: center;
          position: absolute;
          top:18%;
-         z-index: -1
+         z-index: -1;
+        
      
     }
     .recordsmoved{
@@ -41,10 +42,33 @@
           align-items: center;
          position: absolute;
          top:18%;
-         left:45%;
+         /*left:45%;*/
+         animation: move 0.5s forwards;
+        
     }
+  
     #record1{}
     #album1{}
+  @keyframes move {
+  0% {
+    transform: translateX(0px);
+  }
+  
+  100% {
+     transform: translateX(150px);
+  }
+}
+  
+    @keyframes unmove {
+  100% {
+    transform: translateX(0px);
+  }
+  
+  0% {
+     transform: translateX(150px);
+  }
+}
+
     
 </style>
 </head>
@@ -54,8 +78,8 @@
     <p class = titles> TITLE</p>
    <div class = albums>
     <p>
-       <a href="album1.html">
-        <img src = "assets/blank.png" width = 400 px id = album1>
+       <a href="https://www.youtube.com/watch?v=KCSFhIA8ZIg&list=OLAK5uy_n1CSbFCuuYKHAEPY83p4F1KH6Isf0DHho">
+        <img src = "assets/zittystardust.jpg" width = 400 id = album1>
        <img src = "assets/record.png" width = 400 px id = record1 class = records>
         </a>
         
@@ -63,44 +87,49 @@
     </div>
     <div class = albums>
     <p>
-        <img src = "assets/record.png" width = 400 px class = records id = record2>
-        <img src = "assets/blank.png" width = 400 px id = album2>
-        
+        <a href="https://www.youtube.com/watch?v=m-9eOlsaEgo">
+        <img src = "assets/record2.png" width = 400 px id = record2 class = records>
+        <img src = "assets/desert.jpg" width = 400 px id = album2>
+      </a>
     </p>
     </div>
     <div class = albums>
     <p>
-        <img src = "assets/record.png" width = 400 px class = records id = record3>
+        <img src = "assets/record3.png" width = 400 px id = record3 class = records>
         <img src = "assets/blank.png" width = 400 px id = album3>
         
     </p>
     </div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
-   $("#album1").hover(
+$("#album1").hover(
   function () {
-    $("#record1").addClass("recordsmoved");
+    $('#record1').addClass('recordsmoved');
   },
   function () {
-    $("#record1").removeClass("recordsmoved");
+   
+    $('#record1').removeClass('recordsmoved');
   }
 );
-        $("#album2").hover(
+        
+$("#album2").hover(
   function () {
-    $("#record2").addClass("recordsmoved");
+    $('#record2').addClass('recordsmoved');
   },
   function () {
-    $("#record2").removeClass("recordsmoved");
+    $('#record2').removeClass('recordsmoved');
   }
 );
-        $("#album3").hover(
+        
+$("#album3").hover(
   function () {
-    $("#record3").addClass("recordsmoved");
+    $('#record3').addClass('recordsmoved');
   },
   function () {
-    $("#record3").removeClass("recordsmoved");
+    $('#record3').removeClass('recordsmoved');
   }
 );
+           
     </script>
 </body>
 </html>
